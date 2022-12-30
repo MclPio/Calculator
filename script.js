@@ -19,9 +19,18 @@ function operate(a,b,operator) {
         return add(a,b);
     } else if (operator === "-") {
         return subtract(a,b);
-    } else if (operator === "*") {
+    } else if (operator === "×") {
         return multiply(a,b);
-    } else if (operator === "/") {
+    } else if (operator === "÷") {
         return divide(a,b);
     }
 }
+
+const numberButtons = document.querySelectorAll('.number');
+const display = document.querySelector('.display');
+let input = '';
+let userInput = numberButtons.forEach((item) => {
+    item.addEventListener('click', () => {
+    input+=item.textContent
+    display.textContent = input;
+})});

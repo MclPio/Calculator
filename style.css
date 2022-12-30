@@ -1,6 +1,7 @@
 body {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .container {
@@ -9,6 +10,7 @@ body {
     font-size: 0;
     padding: 5px;
     background-color: #566385;
+    width: 380px;
 }
 
 .display {
@@ -16,7 +18,7 @@ body {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    font-size: xx-large;
+    font-size: 50px;
     height: 75px;
     background-color: #ffffff;
     margin: 1px;
