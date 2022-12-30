@@ -1,0 +1,53 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    border: 1px solid black;
+    margin: 5px;
+    font-size: 0;
+    padding: 5px;
+    background-color: #566385;
+}
+
+.display {
+    border: 1px solid black;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: xx-large;
+    height: 75px;
+    background-color: #ffffff;
+    margin: 1px;
+    padding-right: 2px;
+}
+
+.firstRow > button, .secondRow > button, .thirdRow > button {
+    width: 75px;
+    height: 75px;
+}
+
+.zero, .equals {
+    width: 152px;
+    height: 75px;
+}
+
+.period {
+    width: 75px;
+    height: 75px;
+}
+
+button {
+    font-size: xx-large;
+    background-color: #ffffff;
+    margin: 1px;
+}
+
+.AC, .DEL {
+    background-color: #FF9900;
+}
+
+.firstRow, .secondRow, .thirdRow, .fourthRow  {
+    display: flex;
+}
