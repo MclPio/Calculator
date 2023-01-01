@@ -25,7 +25,7 @@ function operate(a,b,operator) {
     } else if (operator === "÷") {
         x = divide(a,b);
     }
-    x = Math.round((x+Number.EPSILON)*100)/100; 
+    x = Math.round((x+Number.EPSILON)*100000000)/100000000; 
     return x;
 }
 
