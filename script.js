@@ -44,17 +44,23 @@ function updateDisplay(content) {
     display.textContent = content;
 }
 
+
+function checkRepeat(string) {
+    let count = (string.match(/\./g) || []).length
+    return count;
+}
+
 numberButtons.forEach(number => number.addEventListener('click', () => {
     if (!n1) {
         n1 = number.textContent;
         updateDisplay(n1);
-    } else if (n1 && !o1 && !resultExist) {
+    } else if (n1 && !o1 && !resultExist && (checkRepeat(n1) === 0 || number.textContent !== '.')) {
         n1 += number.textContent;
         updateDisplay(n1);
     } else if (n1 && o1 && !n2) {
         n2 = number.textContent;
         updateDisplay(n2);
-    } else if (n1 && o1 && n2) {
+    } else if (n1 && o1 && n2 && (checkRepeat(n2) === 0 || number.textContent !== '.')) {
         n2 += number.textContent;
         updateDisplay(n2);
     }
