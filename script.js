@@ -37,6 +37,7 @@ let o2;
 const numberButtons = document.querySelectorAll('.number');
 const operatorButtons = document.querySelectorAll('.operators');
 const display = document.querySelector('.display');
+const AC = document.querySelector('.AC');
 
 function updateDisplay(content) {
     display.textContent = content;
@@ -78,3 +79,10 @@ operatorButtons.forEach(operator => operator.addEventListener('click', () => {
         }
     }
 }))
+
+AC.addEventListener('click', () => {
+    updateDisplay(0);
+    n1 = null;
+    n2 = null;
+    o1 = null;
+})
