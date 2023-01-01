@@ -90,14 +90,22 @@ AC.addEventListener('click', () => {
     resultExist = false;
 })
 
-// DEL.addEventListener('click', () => {
-//     if (display.textContent === n1) {
-//         if (n1.length > 1) {
-//             n1 = n1.slice(0,-1);
-//             updateDisplay(n1);
-//         } else if (n1.length = 1) {
-//             n1 = 0;
-//             updateDisplay(n1);
-//         }  
-//     }
-// })
+DEL.addEventListener('click', () => {
+    if (display.textContent === n1) {
+        if (n1.length > 1) {
+            n1 = n1.slice(0,-1);
+            updateDisplay(n1);
+        } else if (n1.length = 1) {
+            n1 = 0;
+            updateDisplay(n1);
+        }  
+    } else if (display.textContent === n2) {
+        if (n2.length > 1) {
+            n2 = n2.slice(0,-1);
+            updateDisplay(n2);
+        } else if (n2.length = 1) {
+            n2 = 0;
+            updateDisplay(n2);
+        }  
+    }
+})
