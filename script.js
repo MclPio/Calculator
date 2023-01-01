@@ -15,15 +15,18 @@ function divide(a,b) {
 }
 
 function operate(a,b,operator) {
+    let x;
     if (operator === "+") {
-        return add(a,b);
+        x = add(a,b);
     } else if (operator === "-") {
-        return subtract(a,b);
+        x = subtract(a,b);
     } else if (operator === "×") {
-        return multiply(a,b);
+        x = multiply(a,b);
     } else if (operator === "÷") {
-        return divide(a,b);
-    } 
+        x = divide(a,b);
+    }
+    x = Math.round((x+Number.EPSILON)*100)/100; 
+    return x;
 }
 
 let n1;
