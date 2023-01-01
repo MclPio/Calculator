@@ -25,7 +25,7 @@ function operate(a,b,operator) {
     } else if (operator === "÷") {
         x = divide(a,b);
     }
-    x = Math.round((x+Number.EPSILON)*100000000)/100000000; 
+    x = Math.round((x+Number.EPSILON)*1000000)/1000000; 
     return x;
 }
 
@@ -44,23 +44,26 @@ function updateDisplay(content) {
     display.textContent = content;
 }
 
-
 function checkRepeat(string) {
     let count = (string.match(/\./g) || []).length
     return count;
+}
+
+function checkLength(value) {
+    return value.length < 15;
 }
 
 numberButtons.forEach(number => number.addEventListener('click', () => {
     if (!n1) {
         n1 = number.textContent;
         updateDisplay(n1);
-    } else if (n1 && !o1 && !resultExist && (checkRepeat(n1) === 0 || number.textContent !== '.')) {
+    } else if (n1 && !o1 && !resultExist && (checkRepeat(n1) === 0 || number.textContent !== '.') && checkLength(n1)) {
         n1 += number.textContent;
         updateDisplay(n1);
     } else if (n1 && o1 && !n2) {
         n2 = number.textContent;
         updateDisplay(n2);
-    } else if (n1 && o1 && n2 && (checkRepeat(n2) === 0 || number.textContent !== '.')) {
+    } else if (n1 && o1 && n2 && (checkRepeat(n2) === 0 || number.textContent !== '.') && checkLength(n2)) {
         n2 += number.textContent;
         updateDisplay(n2);
     }
