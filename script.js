@@ -36,20 +36,26 @@ let o2;
 
 const numberButtons = document.querySelectorAll('.number');
 const operatorButtons = document.querySelectorAll('.operators');
+const display = document.querySelector('.display');
 
-//console.log(n1,n2,o1,o2,numberButtons,operatorButtons);
+function updateDisplay(content) {
+    display.textContent = content;
+}
 
 numberButtons.forEach(number => number.addEventListener('click', () => {
     if (!n1) {
         n1 = number.textContent;
+        updateDisplay(n1);
     } else if (n1 && !o1) {
         n1 += number.textContent;
+        updateDisplay(n1);
     } else if (n1 && o1 && !n2) {
         n2 = number.textContent;
+        updateDisplay(n2);
     } else if (n1 && o1 && n2) {
         n2 += number.textContent;
+        updateDisplay(n2);
     }
-    console.log(n1,n2);
 }));
 
 operatorButtons.forEach(operator => operator.addEventListener('click', () => {
@@ -58,6 +64,7 @@ operatorButtons.forEach(operator => operator.addEventListener('click', () => {
             n1 = operate(n1,n2,o1);
             n2 = null;
             o1 = null;
+            updateDisplay(n1);
         }
     } else if (operator.textContent === "+" || operator.textContent === "-" || operator.textContent === "×" || 
     operator.textContent === "÷") {
@@ -67,7 +74,7 @@ operatorButtons.forEach(operator => operator.addEventListener('click', () => {
             n1 = operate(n1,n2,o1);
             o1 = operator.textContent;
             n2 = null;
+            updateDisplay(n1);
         }
     }
-    console.log(n1,n2,o1);
 }))
