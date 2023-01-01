@@ -2,15 +2,20 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
+    background-color: black;
 }
 
+h1 {
+    color: white;
+    font-size: 100px;
+}
 .container {
     border: 1px solid black;
     margin: 5px;
     font-size: 0;
     padding: 5px;
-    background-color: #566385;
-    width: 380px;
+    background-color: #b1c4f3;
+    width: 550px;
 }
 
 .display {
@@ -52,4 +57,10 @@ button {
 
 .firstRow, .secondRow, .thirdRow, .fourthRow  {
     display: flex;
+    justify-content: center;
+}
+
+.add, .divide, .subtract, .multiply {
+    background-color: rgb(120, 120, 255);
+    color: white;
 }
