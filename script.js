@@ -39,6 +39,7 @@ const operatorButtons = document.querySelectorAll('.operators');
 const display = document.querySelector('.display');
 const AC = document.querySelector('.AC');
 const DEL = document.querySelector('.DEL');
+const keyList = ['1','2','3','4','5','6','7','8','9','0','+','-','*','/','.','Enter','Backspace', 'Escape','Delete']
 
 function updateDisplay(content) {
     display.textContent = content;
@@ -118,3 +119,27 @@ DEL.addEventListener('click', () => {
         }  
     }
 })
+
+document.addEventListener('keydown', (event) => {
+    console.log(event.key);
+    numberButtons.forEach(number => {
+        if (event.key === number.textContent) {
+            number.click()
+        }});
+    operatorButtons.forEach(operator => {
+        if (event.key === operator.textContent) {
+            operator.click();
+        } else if (event.key === 'Enter' && operator.textContent === '=') {
+            operator.click();
+        } else if (event.key === '*' && operator.textContent === '×') {
+            operator.click();
+        } else if (event.key === '/' && operator.textContent === '÷') {
+            operator.click();
+        }
+    });
+    if (event.key === 'Backspace' || event.key === 'Delete'){
+        DEL.click();
+    } else if (event.key === 'Escape') {
+        AC.click()
+    }
+});
