@@ -68,6 +68,10 @@ numberButtons.forEach(number => number.addEventListener('click', () => {
         n2 += number.textContent;
         updateDisplay(n2);
     }
+    number.classList.toggle('clicked')
+    function changeClass() {number.classList.toggle('clicked')};
+    setTimeout(changeClass,100);
+    
 }));
 
 operatorButtons.forEach(operator => operator.addEventListener('click', () => {
@@ -90,6 +94,9 @@ operatorButtons.forEach(operator => operator.addEventListener('click', () => {
             updateDisplay(n1);
         }
     }
+    operator.classList.toggle('clickedOperator')
+    function changeClass() {operator.classList.toggle('clickedOperator')};
+    setTimeout(changeClass,100);
 }))
 
 AC.addEventListener('click', () => {
@@ -98,6 +105,9 @@ AC.addEventListener('click', () => {
     n2 = null;
     o1 = null;
     resultExist = false;
+    AC.classList.toggle('clickedAC')
+    function changeClass() {AC.classList.toggle('clickedAC')};
+    setTimeout(changeClass,100);
 })
 
 DEL.addEventListener('click', () => {
@@ -118,6 +128,9 @@ DEL.addEventListener('click', () => {
             updateDisplay(n2);
         }  
     }
+    DEL.classList.toggle('clickedDEL')
+    function changeClass() {DEL.classList.toggle('clickedDEL')};
+    setTimeout(changeClass,100);
 })
 
 document.addEventListener('keydown', (event) => {
